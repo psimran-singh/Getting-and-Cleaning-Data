@@ -22,3 +22,23 @@ x_train <- read.table("UCI HAR Dataset/train/X_train.txt", col.names = features$
 y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = "code")
 
 
+# str(features) 
+# str(activities)
+# str(subject_test)
+# str(x_test)
+# str(y_test)
+# str(subject_train)
+# str(x_train)
+# str(y_train)
+
+x <- rbind(x_test,x_train)
+y <- rbind(y_test,y_train)
+subject <- rbind(subject_test,subject_train)
+
+test_train_merged <- cbind(subject,x,y)
+
+tidydata <- test_train_merged %>% 
+  select(subject,code,contains("mean"),contains("std"))
+
+# str(tidydata)
+
