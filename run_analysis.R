@@ -4,4 +4,5 @@ urlA <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HA
 locationA <- "./Dataset.zip"
 
 download.file(urlA,locationA,method="curl")
+unzip(locationA,exdir="./Datasets")
 
