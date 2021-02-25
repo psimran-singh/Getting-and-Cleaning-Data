@@ -42,3 +42,18 @@ tidydata <- test_train_merged %>%
 
 # str(tidydata)
 
+names(tidydata)[1] = "Subject"
+names(tidydata)[2] = "Activity"
+names(tidydata)<-gsub("Acc", "Accelerometer", names(tidydata))
+names(tidydata)<-gsub("Gyro", "Gyroscope", names(tidydata))
+names(tidydata)<-gsub("BodyBody", "Body", names(tidydata))
+names(tidydata)<-gsub("Mag", "Magnitude", names(tidydata))
+names(tidydata)<-gsub("^t", "Time", names(tidydata))
+names(tidydata)<-gsub("^f", "Frequency", names(tidydata))
+names(tidydata)<-gsub("tBody", "TimeBody", names(tidydata))
+names(tidydata)<-gsub("-mean()", "Mean", names(tidydata), ignore.case = TRUE)
+names(tidydata)<-gsub("-std()", "STD", names(tidydata), ignore.case = TRUE)
+names(tidydata)<-gsub("-freq()", "Frequency", names(tidydata), ignore.case = TRUE)
+names(tidydata)<-gsub("angle", "Angle", names(tidydata))
+names(tidydata)<-gsub("gravity", "Gravity", names(tidydata))
+
